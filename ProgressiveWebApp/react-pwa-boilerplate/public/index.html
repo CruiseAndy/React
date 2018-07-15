@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./src/favicon.ico">
+    <!-- manifest 加入這邊～ -->
+    <link rel="manifest" href="manifest.json">
+    <title>React App</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- service worker 在這邊註冊~ -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js').catch(function(ex) {
+                console.warn(ex);
+                console.warn('(This warning can be safely ignored outside of the production build.)');
+            });
+        }
+    </script>
+  </body>
+</html>
